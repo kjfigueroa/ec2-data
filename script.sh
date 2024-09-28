@@ -67,7 +67,7 @@ box-shadow: 0 0 5px #0aafe6, 0 0 5px #ffffff;
 </div>
 </body>
 </html>
-<EOF
+EOF
 # hostname info
 while read line; do
     if [[ $line != "<td>CODEHERE</td>" ]]
