@@ -76,6 +76,7 @@ while read line; do
             echo "<td>$(cat /dev/urandom |tr -dc 'a-zA-Z' |head -c 3; cat /dev/urandom |tr -dc '0-9' |head -c 3)</td>" >> /var/www/html/index.html
             else
                 echo $line >> /var/www/html/index.html
+        fi
     fi
 done < $HOME/template.txt
 rm -f $HOME/template.txt               
