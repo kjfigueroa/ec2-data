@@ -53,7 +53,7 @@ box-shadow: 0 0 5px #0aafe6, 0 0 5px #ffffff;
 <div id="text">
 <table style="width:100%" class="text">
 <tr>
-<h1>Server Response</h1><br>
+<h1>Server Info</h1><br>
 </tr>
 <tr>
 <th><b>Hostname</b></th>
