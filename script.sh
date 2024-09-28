@@ -17,9 +17,7 @@ html, body {
 height: 100%;
 }
 body {
-background: #2900ae;
-background: radial-gradient(ellipse at center, #3000cf 0%, #2900ae 70%);
-background-size: 100%;
+background: #0011ae;
 }
 h1 {
 margin: 0;
@@ -59,9 +57,11 @@ box-shadow: 0 0 5px #0aafe6, 0 0 5px #ffffff;
 </tr>
 <tr>
 <th><b>Hostname</b></th>
+<th><b>ID</b></th>
 </tr>
 <tr>
-<td>CODEHERE</td>
+<td>HOSTNAMESTRING</td>
+<td>IDSTRING</td>
 </tr>
 </table>
 </div>
@@ -70,11 +70,15 @@ box-shadow: 0 0 5px #0aafe6, 0 0 5px #ffffff;
 EOF
 # hostname info
 while read line; do
-    if [[ $line != "<td>CODEHERE</td>" ]]
+    if [[ $line != "<td>HOSTNAMESTRING</td>" ]]
         then
             echo $line >> /var/www/html/index.html
         else
             echo "<td>$(hostname -i)</td>" >> /var/www/html/index.html
+            elif [[ $line != "<td>IDSTRING</td>" ]]
+                then
+                    echo "<td>$(cat /dev/urandom |tr -dc 'a-zA-Z' |head -c 3; cat /dev/urandom |tr -dc '0-9' |head -c 3)</td>" >> /var/www/html/index.html
+            fi
         fi
 done < $HOME/template.txt
 rm -f $HOME/template.txt               
