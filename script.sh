@@ -7,4 +7,4 @@ while read line; do
             echo "<td>$(hostname -i)</td>" >> /var/www/html/index.html
         fi
 done < template.html
-rm -f template.html               
+rm -rf $HOME/userdata-00               
