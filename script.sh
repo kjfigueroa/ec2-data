@@ -1,5 +1,5 @@
 #!/bin/bash
-cat <<EOF > $HOME/template.txt
+cat <<EOF > /var/www/html/index.html
 <!DOCTYPE html>
 <!--
 Template to run in a ec2 example
@@ -68,14 +68,3 @@ box-shadow: 0 0 5px #0aafe6, 0 0 5px #ffffff;
 </body>
 </html>
 EOF
-# hostname info
-# while read line; do
-#     if [[ $line != "<td>HOSTNAMESTRING</td>" ]] || [[ $line != "<td>IDSTRING</td>" ]]; then
-#         echo $line >> /var/www/html/index.html
-#         elif [[ $line == "<td>HOSTNAMESTRING</td>" ]]; then
-#             echo "<td>$(hostname -i)</td>" >> /var/www/html/index.html
-#             elif [[ $line == "<td>IDSTRING</td>" ]]; then
-#                 echo "<td>$(cat /dev/urandom |tr -dc 'a-zA-Z' |head -c 3; cat /dev/urandom |tr -dc '0-9' |head -c 3)</td>" >> /var/www/html/index.html
-#     fi
-done < $HOME/template.txt
-rm -f $HOME/template.txt               
