@@ -1,4 +1,4 @@
-In the example we have an AMI: al2023-ami-2023.5.20240916.0-kernel-6.1-x86_64. The commands can be adapted according to the preferred (Linux) image.
+In the example we have an AMI: `al2023-ami-2023.5.20240916.0-kernel-6.1-x86_64`. The commands can be adapted according to the preferred (Linux) image.
 
 ```bash
 #!/usr/bin/bash
