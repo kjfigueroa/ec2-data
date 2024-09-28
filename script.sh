@@ -72,9 +72,9 @@ EOF
 while read line; do
     if [[ $line != "<td>HOSTNAMESTRING</td>" ]] || [[ $line != "<td>IDSTRING</td>" ]]; then
         echo $line >> /var/www/html/index.html
-        elif [[ $line == "<td>HOSTNAMESTRING</td>" ]]; then
+        if [[ $line == "<td>HOSTNAMESTRING</td>" ]]; then
             echo "<td>$(hostname -i)</td>" >> /var/www/html/index.html
-            elif [[ $line != "<td>IDSTRING</td>" ]]; then
+            if [[ $line == "<td>IDSTRING</td>" ]]; then
                 echo "<td>$(cat /dev/urandom |tr -dc 'a-zA-Z' |head -c 3; cat /dev/urandom |tr -dc '0-9' |head -c 3)</td>" >> /var/www/html/index.html
             fi
         fi
