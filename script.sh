@@ -31,24 +31,23 @@ padding: 20px 0 0;
 }
 #text {
 font-family: "Share Tech Mono", monospace;
-color: #ffffff;
 text-align: center;
 position: absolute;
 left: 50%;
 top: 50%;
 transform: translate(-50%, -50%);
-color: #daf6ff;
-text-shadow: 0 0 20px #006586, 0 0 20px rgba(10, 175, 230, 0);
+color: #3d3d3d;
+text-shadow: 0 0 20px #7e7e7e, 0 0 20px rgba(10, 175, 230, 0);
 }
 table, th, td {
-border: 1px solid #ffffff;
+border: 1px solid #3d3d3d;
 border-collapse: collapse;
 margin: 0;
 padding: 0;
 letter-spacing: 0.1em;
 font-size: 50px;
 padding: 20px;
-box-shadow: 0 0 5px #006586, 0 0 5px #ffffff;
+box-shadow: 0 0 5px #7e7e7e, 0 0 5px #ffffff;
 }
 </style>
 </head>
