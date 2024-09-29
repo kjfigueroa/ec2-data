@@ -1,4 +1,7 @@
 #!/bin/bash
+hostname=$(hostname -i)
+idvar=$(cat /dev/urandom |tr -dc 'a-zA-Z' |head -c 3; cat /dev/urandom |tr -dc '0-9' |head -c 3)
+bgc=$(cat /dev/urandom |tr -dc 'a-z0-9' |head -c 6)
 cat <<EOF > /var/www/html/index.html
 <!DOCTYPE html>
 <!--
@@ -17,7 +20,7 @@ html, body {
 height: 100%;
 }
 body {
-background: #0011ae;
+background: #$bgc;
 }
 h1 {
 margin: 0;
@@ -35,7 +38,7 @@ left: 50%;
 top: 50%;
 transform: translate(-50%, -50%);
 color: #daf6ff;
-text-shadow: 0 0 20px #0aafe6, 0 0 20px rgba(10, 175, 230, 0);
+text-shadow: 0 0 20px #006586, 0 0 20px rgba(10, 175, 230, 0);
 }
 table, th, td {
 border: 1px solid #ffffff;
@@ -45,7 +48,7 @@ padding: 0;
 letter-spacing: 0.1em;
 font-size: 50px;
 padding: 20px;
-box-shadow: 0 0 5px #0aafe6, 0 0 5px #ffffff;
+box-shadow: 0 0 5px #006586, 0 0 5px #ffffff;
 }
 </style>
 </head>
@@ -60,8 +63,8 @@ box-shadow: 0 0 5px #0aafe6, 0 0 5px #ffffff;
 <th><b>ID</b></th>
 </tr>
 <tr>
-<td>$(hostname -i)</td>
-<td>$(cat /dev/urandom |tr -dc 'a-zA-Z' |head -c 3; cat /dev/urandom |tr -dc '0-9' |head -c 3)</td>
+<td>$hostname</td>
+<td>$idvar</td>
 </tr>
 </table>
 </div>
