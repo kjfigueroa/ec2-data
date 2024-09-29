@@ -1,7 +1,7 @@
 #!/bin/bash
 hostname=$(hostname -i)
 idvar=$(cat /dev/urandom |tr -dc 'a-zA-Z' |head -c 3; cat /dev/urandom |tr -dc '0-9' |head -c 3)
-bgc=$(cat /dev/urandom |tr -dc 'a-z0-9' |head -c 6)
+bgc=$(cat /dev/urandom |tr -dc 'a-f0-9' |head -c 6)
 cat <<EOF > /var/www/html/index.html
 <!DOCTYPE html>
 <!--
