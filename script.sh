@@ -36,18 +36,18 @@ position: absolute;
 left: 50%;
 top: 50%;
 transform: translate(-50%, -50%);
-color: #3d3d3d;
+color: #000000;
 text-shadow: 0 0 20px #7e7e7e, 0 0 20px rgba(10, 175, 230, 0);
 }
 table, th, td {
-border: 1px solid #3d3d3d;
+border: 1px solid #000000;
 border-collapse: collapse;
 margin: 0;
 padding: 0;
 letter-spacing: 0.1em;
 font-size: 50px;
 padding: 20px;
-box-shadow: 0 0 5px #7e7e7e, 0 0 5px #ffffff;
+box-shadow: 0 0 5px #7e7e7e, 0 0 5px #232323;
 }
 </style>
 </head>
