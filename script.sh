@@ -56,7 +56,7 @@ box-shadow: 0 0 5px #7e7e7e, 0 0 5px #232323;
 <div id="text">
 <table style="width:100%" class="text">
 <tr>
-<h1>Server Info</h1><br>
+<h1>User Data</h1><br>
 </tr>
 <tr>
 <th><b>IP</b></th>
