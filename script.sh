@@ -1,7 +1,8 @@
 #!/bin/bash
-hostname=$(hostname -i)
+ipvar=$(curl -s ipinfo.io |grep -w ip |awk '{print $2}' |cut -d \" -f 2)
 idvar=$(cat /dev/urandom |tr -dc 'a-zA-Z' |head -c 3; cat /dev/urandom |tr -dc '0-9' |head -c 3)
 bgc=$(cat /dev/urandom |tr -dc 'a-f0-9' |head -c 6)
+rname=$(curl -sL pseudorandom.name |cut -d ' ' -f 1)
 cat <<EOF > /var/www/html/index.html
 <!DOCTYPE html>
 <!--
@@ -58,12 +59,15 @@ box-shadow: 0 0 5px #7e7e7e, 0 0 5px #232323;
 <h1>Server Info</h1><br>
 </tr>
 <tr>
-<th><b>Hostname</b></th>
+<th><b>IP</b></th>
 <th><b>ID</b></th>
 </tr>
 <tr>
-<td>$hostname</td>
+<td>$ipvar</td>
 <td>$idvar</td>
+</tr>
+<tr>
+<td colspan="2">$rname</td>
 </tr>
 </table>
 </div>
